@@ -1,24 +1,23 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/avatar/assets/assets.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
+part 'cloth.freezed.dart';
 part 'cloth.g.dart';
 
-@JsonSerializable()
-class Cloth extends SvgAvatarPiece {
-  const Cloth({
-    required this.clothType,
-    required this.clothColor,
-  });
+@freezed
+class Cloth extends SvgAvatarPiece with _$Cloth {
+  const factory Cloth({
+    required ClothType clothType,
+    required ClothColor clothColor,
+  }) = _Cloth;
+
+  const Cloth._();
+
   factory Cloth.fromJson(Map<String, dynamic> json) => _$ClothFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ClothToJson(this);
-
-  final ClothType clothType;
-  final ClothColor clothColor;
-
   @override
-  String get rawSvg {
+  String get componentSvg {
     final hexColor = clothColor.hexString;
 
     switch (clothType) {
@@ -198,7 +197,8 @@ class Cloth extends SvgAvatarPiece {
   }
 
   @override
-  List<Object?> get props => [clothColor, clothType];
+  String get rawSvg =>
+      '''<svg width="100px" height="120px" viewBox="30 100 200 250" >$componentSvg</svg>''';
 }
 
 enum ClothType {

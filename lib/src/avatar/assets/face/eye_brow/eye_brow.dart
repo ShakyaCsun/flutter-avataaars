@@ -1,23 +1,20 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
-part 'eyebrow.g.dart';
+part 'eye_brow.freezed.dart';
+part 'eye_brow.g.dart';
 
-@JsonSerializable()
-class EyeBrow extends SvgAvatarPiece {
-  const EyeBrow({
-    required this.eyeBrowType,
-  });
+@freezed
+class EyeBrow extends SvgAvatarPiece with _$EyeBrow {
+  const factory EyeBrow({required EyeBrowType eyeBrowType}) = _EyeBrow;
 
   factory EyeBrow.fromJson(Map<String, dynamic> json) =>
       _$EyeBrowFromJson(json);
 
-  Map<String, dynamic> toJson() => _$EyeBrowToJson(this);
-
-  final EyeBrowType eyeBrowType;
+  const EyeBrow._();
 
   @override
-  String get rawSvg {
+  String get componentSvg {
     switch (eyeBrowType) {
       case EyeBrowType.angry:
         return '''
@@ -228,7 +225,8 @@ class EyeBrow extends SvgAvatarPiece {
   }
 
   @override
-  List<Object?> get props => [eyeBrowType];
+  String get rawSvg =>
+      '''<svg width="20px" height="20px" viewBox="-3 -50 120 120">$componentSvg</svg>''';
 }
 
 enum EyeBrowType {

@@ -6,12 +6,13 @@ part of 'accessories.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Accessories _$AccessoriesFromJson(Map<String, dynamic> json) => Accessories(
+_$_Accessories _$$_AccessoriesFromJson(Map<String, dynamic> json) =>
+    _$_Accessories(
       accessoryType:
           _$enumDecode(_$AccessoryTypeEnumMap, json['accessory_type']),
     );
 
-Map<String, dynamic> _$AccessoriesToJson(Accessories instance) =>
+Map<String, dynamic> _$$_AccessoriesToJson(_$_Accessories instance) =>
     <String, dynamic>{
       'accessory_type': _$AccessoryTypeEnumMap[instance.accessoryType],
     };

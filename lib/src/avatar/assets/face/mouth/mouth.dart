@@ -1,20 +1,18 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
+part 'mouth.freezed.dart';
 part 'mouth.g.dart';
 
-@JsonSerializable()
-class Mouth extends SvgAvatarPiece {
-  const Mouth({
-    required this.mouthType,
-  });
+@freezed
+class Mouth extends SvgAvatarPiece with _$Mouth {
+  const factory Mouth({required MouthType mouthType}) = _Mouth;
 
   factory Mouth.fromJson(Map<String, dynamic> json) => _$MouthFromJson(json);
-  Map<String, dynamic> toJson() => _$MouthToJson(this);
+  const Mouth._();
 
-  final MouthType mouthType;
   @override
-  String get rawSvg {
+  String get componentSvg {
     switch (mouthType) {
       case MouthType.basic:
         return '''
@@ -176,7 +174,8 @@ class Mouth extends SvgAvatarPiece {
   }
 
   @override
-  List<Object?> get props => [mouthType];
+  String get rawSvg =>
+      '''<svg width="20px" height="20px" viewBox="0 10 120 120">$componentSvg</svg>''';
 }
 
 enum MouthType {

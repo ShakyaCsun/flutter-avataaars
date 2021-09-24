@@ -1,22 +1,19 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
+part 'eyes.freezed.dart';
 part 'eyes.g.dart';
 
-@JsonSerializable()
-class Eyes extends SvgAvatarPiece {
-  const Eyes({
-    required this.eyesType,
-  });
+@freezed
+class Eyes extends SvgAvatarPiece with _$Eyes {
+  const factory Eyes({required EyesType eyesType}) = _Eyes;
 
   factory Eyes.fromJson(Map<String, dynamic> json) => _$EyesFromJson(json);
 
-  Map<String, dynamic> toJson() => _$EyesToJson(this);
-
-  final EyesType eyesType;
+  const Eyes._();
 
   @override
-  String get rawSvg {
+  String get componentSvg {
     switch (eyesType) {
       case EyesType.basic:
         return '''
@@ -255,7 +252,8 @@ class Eyes extends SvgAvatarPiece {
   }
 
   @override
-  List<Object?> get props => [eyesType];
+  String get rawSvg =>
+      '''<svg width="20px" height="20px" viewBox="-3 -30 120 120">$componentSvg</svg>''';
 }
 
 enum EyesType {

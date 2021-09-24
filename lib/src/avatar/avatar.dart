@@ -1,32 +1,26 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/avatar/assets/assets.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
+part 'avatar.freezed.dart';
 part 'avatar.g.dart';
 
-@JsonSerializable()
-class Avatar extends SvgAvatarPiece {
-  const Avatar({
-    required this.eyeBrow,
-    required this.eyes,
-    required this.mouth,
-    required this.accessories,
-    required this.facialHair,
-    required this.hairStyle,
-    required this.skin,
-    required this.cloth,
-  });
+@freezed
+class Avatar extends SvgAvatarPiece with _$Avatar {
+  const factory Avatar({
+    required Cloth cloth,
+    required EyeBrow eyeBrow,
+    required Eyes eyes,
+    required Mouth mouth,
+    required Accessories accessories,
+    required FacialHair facialHair,
+    required HairStyle hairStyle,
+    required Skin skin,
+  }) = _Avatar;
 
   factory Avatar.fromJson(Map<String, dynamic> json) => _$AvatarFromJson(json);
 
-  final Cloth cloth;
-  final EyeBrow eyeBrow;
-  final Eyes eyes;
-  final Mouth mouth;
-  final Accessories accessories;
-  final FacialHair facialHair;
-  final HairStyle hairStyle;
-  final Skin skin;
+  const Avatar._();
 
   static const defaultAvatar = Avatar(
     eyeBrow: EyeBrow(eyeBrowType: EyeBrowType.basic),
@@ -48,22 +42,8 @@ class Avatar extends SvgAvatarPiece {
     ),
   );
 
-  Map<String, dynamic> toJson() => _$AvatarToJson(this);
-
   @override
-  List<Object?> get props => [
-        cloth,
-        eyeBrow,
-        eyes,
-        mouth,
-        accessories,
-        facialHair,
-        hairStyle,
-        skin,
-      ];
-
-  @override
-  String get rawSvg {
+  String get componentSvg {
     return '''
     <svg width="264px" height="280px" viewBox="0 0 264 280" version="1.1"
 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +63,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 <mask id="mask-6" fill="white">
 <use xlink:href="#path-5"></use>
 </mask>
-<use fill="#D0C6AC" xlink:href="#path-5"></use>${skin.rawSvg}<path d="M156,79 L156,102 C156,132.927946 130.927946,158 100,158 C69.072054,158 44,132.927946 44,102 L44,79 L44,94 C44,124.927946 69.072054,150 100,150 C130.927946,150 156,124.927946 156,94 L156,79 Z" id="Neck-Shadow" opacity="0.100000001" fill="#000000" mask="url(#mask-6)"></path></g>${cloth.rawSvg}<g id="Face" transform="translate(76.000000, 82.000000)" fill="#000000">${mouth.rawSvg}${facialHair.rawSvg}${const Nose().rawSvg}${eyes.rawSvg}${eyeBrow.rawSvg}${accessories.rawSvg}</g>${hairStyle.rawSvg}</g></g></g></g></svg>
+<use fill="#D0C6AC" xlink:href="#path-5"></use>${skin.componentSvg}<path d="M156,79 L156,102 C156,132.927946 130.927946,158 100,158 C69.072054,158 44,132.927946 44,102 L44,79 L44,94 C44,124.927946 69.072054,150 100,150 C130.927946,150 156,124.927946 156,94 L156,79 Z" id="Neck-Shadow" opacity="0.100000001" fill="#000000" mask="url(#mask-6)"></path></g>${cloth.componentSvg}<g id="Face" transform="translate(76.000000, 82.000000)" fill="#000000">${mouth.componentSvg}${const Nose().componentSvg}${eyes.componentSvg}${eyeBrow.componentSvg}${facialHair.componentSvg}${accessories.componentSvg}</g>${hairStyle.componentSvg}</g></g></g></g></svg>
     ''';
   }
+
+  @override
+  String get rawSvg => componentSvg;
 }

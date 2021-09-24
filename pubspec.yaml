@@ -12,6 +12,7 @@ dependencies:
   bloc: ^7.2.0
   equatable: ^2.0.3
   flutter_bloc: ^7.3.0
+  flutter_svg: ^0.22.0
   freezed_annotation: ^0.14.3
   json_annotation: ^4.1.0
 
@@ -22,3 +23,7 @@ dev_dependencies:
   freezed: ^0.14.5
   json_serializable: ^5.0.1
   very_good_analysis: ^2.3.0
+
+flutter:
+  assets:
+    - assets/

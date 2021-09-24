@@ -6,12 +6,12 @@ part of 'cloth.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Cloth _$ClothFromJson(Map<String, dynamic> json) => Cloth(
+_$_Cloth _$$_ClothFromJson(Map<String, dynamic> json) => _$_Cloth(
       clothType: _$enumDecode(_$ClothTypeEnumMap, json['cloth_type']),
       clothColor: _$enumDecode(_$ClothColorEnumMap, json['cloth_color']),
     );
 
-Map<String, dynamic> _$ClothToJson(Cloth instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ClothToJson(_$_Cloth instance) => <String, dynamic>{
       'cloth_type': _$ClothTypeEnumMap[instance.clothType],
       'cloth_color': _$ClothColorEnumMap[instance.clothColor],
     };

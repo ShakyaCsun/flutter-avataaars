@@ -1,16 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'eyebrow.dart';
+part of 'eye_brow.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-EyeBrow _$EyeBrowFromJson(Map<String, dynamic> json) => EyeBrow(
+_$_EyeBrow _$$_EyeBrowFromJson(Map<String, dynamic> json) => _$_EyeBrow(
       eyeBrowType: _$enumDecode(_$EyeBrowTypeEnumMap, json['eye_brow_type']),
     );
 
-Map<String, dynamic> _$EyeBrowToJson(EyeBrow instance) => <String, dynamic>{
+Map<String, dynamic> _$$_EyeBrowToJson(_$_EyeBrow instance) =>
+    <String, dynamic>{
       'eye_brow_type': _$EyeBrowTypeEnumMap[instance.eyeBrowType],
     };
 

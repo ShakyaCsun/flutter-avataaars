@@ -1,24 +1,23 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
+part 'hair_style.freezed.dart';
 part 'hair_style.g.dart';
 
-@JsonSerializable()
-class HairStyle extends SvgAvatarPiece {
-  const HairStyle({
-    required this.hairStyleType,
-    required this.hairColor,
-  });
+@freezed
+class HairStyle extends SvgAvatarPiece with _$HairStyle {
+  const factory HairStyle({
+    required HairStyleType hairStyleType,
+    required HairColor hairColor,
+  }) = _HairStyle;
+
+  const HairStyle._();
 
   factory HairStyle.fromJson(Map<String, dynamic> json) =>
       _$HairStyleFromJson(json);
-  Map<String, dynamic> toJson() => _$HairStyleToJson(this);
-
-  final HairStyleType hairStyleType;
-  final HairColor hairColor;
 
   @override
-  String get rawSvg {
+  String get componentSvg {
     final hexColor = hairColor.hexString;
     switch (hairStyleType) {
       case HairStyleType.hat:
@@ -1209,7 +1208,12 @@ class HairStyle extends SvgAvatarPiece {
   }
 
   @override
-  List<Object?> get props => [hairColor, hairStyleType];
+  String get rawSvg {
+    if (hairStyleType == HairStyleType.noHair) {
+      return SvgAvatarPiece.emptySvg;
+    }
+    return '''<svg width="20px" width="100px" height="100px" viewBox="10 0 250 250">$componentSvg</svg>''';
+  }
 }
 
 enum HairStyleType {

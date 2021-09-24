@@ -6,13 +6,14 @@ part of 'hair_style.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-HairStyle _$HairStyleFromJson(Map<String, dynamic> json) => HairStyle(
+_$_HairStyle _$$_HairStyleFromJson(Map<String, dynamic> json) => _$_HairStyle(
       hairStyleType:
           _$enumDecode(_$HairStyleTypeEnumMap, json['hair_style_type']),
       hairColor: _$enumDecode(_$HairColorEnumMap, json['hair_color']),
     );
 
-Map<String, dynamic> _$HairStyleToJson(HairStyle instance) => <String, dynamic>{
+Map<String, dynamic> _$$_HairStyleToJson(_$_HairStyle instance) =>
+    <String, dynamic>{
       'hair_style_type': _$HairStyleTypeEnumMap[instance.hairStyleType],
       'hair_color': _$HairColorEnumMap[instance.hairColor],
     };
@@ -44,6 +45,7 @@ K _$enumDecode<K, V>(
 }
 
 const _$HairStyleTypeEnumMap = {
+  HairStyleType.noHair: 'noHair',
   HairStyleType.hat: 'hat',
   HairStyleType.hijab: 'hijab',
   HairStyleType.longHairBig: 'longHairBig',
@@ -61,7 +63,6 @@ const _$HairStyleTypeEnumMap = {
   HairStyleType.longHairSraight: 'longHairSraight',
   HairStyleType.longHairStraight2: 'longHairStraight2',
   HairStyleType.longHairStraightStrand: 'longHairStraightStrand',
-  HairStyleType.noHair: 'noHair',
   HairStyleType.shortHairDreads1: 'shortHairDreads1',
   HairStyleType.shortHairDreads2: 'shortHairDreads2',
   HairStyleType.shortHairFrizzle: 'shortHairFrizzle',

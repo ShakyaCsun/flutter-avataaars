@@ -1,6 +1,6 @@
 export 'clothes/cloth.dart';
 export 'clothes/colors.dart';
-export 'face/eybrow/eyebrow.dart';
+export 'face/eye_brow/eye_brow.dart';
 export 'face/eyes/eyes.dart';
 export 'face/mouth/mouth.dart';
 export 'face/nose/nose.dart';

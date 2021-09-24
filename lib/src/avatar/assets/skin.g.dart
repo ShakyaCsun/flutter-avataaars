@@ -6,11 +6,11 @@ part of 'skin.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Skin _$SkinFromJson(Map<String, dynamic> json) => Skin(
+_$_Skin _$$_SkinFromJson(Map<String, dynamic> json) => _$_Skin(
       skinColor: _$enumDecode(_$SkinColorEnumMap, json['skin_color']),
     );
 
-Map<String, dynamic> _$SkinToJson(Skin instance) => <String, dynamic>{
+Map<String, dynamic> _$$_SkinToJson(_$_Skin instance) => <String, dynamic>{
       'skin_color': _$SkinColorEnumMap[instance.skinColor],
     };
 

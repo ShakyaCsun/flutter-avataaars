@@ -6,11 +6,11 @@ part of 'eyes.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Eyes _$EyesFromJson(Map<String, dynamic> json) => Eyes(
+_$_Eyes _$$_EyesFromJson(Map<String, dynamic> json) => _$_Eyes(
       eyesType: _$enumDecode(_$EyesTypeEnumMap, json['eyes_type']),
     );
 
-Map<String, dynamic> _$EyesToJson(Eyes instance) => <String, dynamic>{
+Map<String, dynamic> _$$_EyesToJson(_$_Eyes instance) => <String, dynamic>{
       'eyes_type': _$EyesTypeEnumMap[instance.eyesType],
     };
 

@@ -6,7 +6,8 @@ part of 'avatar.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Avatar _$AvatarFromJson(Map<String, dynamic> json) => Avatar(
+_$_Avatar _$$_AvatarFromJson(Map<String, dynamic> json) => _$_Avatar(
+      cloth: Cloth.fromJson(json['cloth'] as Map<String, dynamic>),
       eyeBrow: EyeBrow.fromJson(json['eye_brow'] as Map<String, dynamic>),
       eyes: Eyes.fromJson(json['eyes'] as Map<String, dynamic>),
       mouth: Mouth.fromJson(json['mouth'] as Map<String, dynamic>),
@@ -16,10 +17,9 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => Avatar(
           FacialHair.fromJson(json['facial_hair'] as Map<String, dynamic>),
       hairStyle: HairStyle.fromJson(json['hair_style'] as Map<String, dynamic>),
       skin: Skin.fromJson(json['skin'] as Map<String, dynamic>),
-      cloth: Cloth.fromJson(json['cloth'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
+Map<String, dynamic> _$$_AvatarToJson(_$_Avatar instance) => <String, dynamic>{
       'cloth': instance.cloth.toJson(),
       'eye_brow': instance.eyeBrow.toJson(),
       'eyes': instance.eyes.toJson(),

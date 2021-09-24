@@ -6,14 +6,15 @@ part of 'facial_hair.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FacialHair _$FacialHairFromJson(Map<String, dynamic> json) => FacialHair(
+_$_FacialHair _$$_FacialHairFromJson(Map<String, dynamic> json) =>
+    _$_FacialHair(
       facialHairType:
           _$enumDecode(_$FacialHairTypeEnumMap, json['facial_hair_type']),
       facialHairColor:
           _$enumDecode(_$FacialHairColorEnumMap, json['facial_hair_color']),
     );
 
-Map<String, dynamic> _$FacialHairToJson(FacialHair instance) =>
+Map<String, dynamic> _$$_FacialHairToJson(_$_FacialHair instance) =>
     <String, dynamic>{
       'facial_hair_type': _$FacialHairTypeEnumMap[instance.facialHairType],
       'facial_hair_color': _$FacialHairColorEnumMap[instance.facialHairColor],
@@ -46,10 +47,10 @@ K _$enumDecode<K, V>(
 }
 
 const _$FacialHairTypeEnumMap = {
+  FacialHairType.blank: 'blank',
   FacialHairType.beardLight: 'beardLight',
   FacialHairType.beardMajestic: 'beardMajestic',
   FacialHairType.beardMedium: 'beardMedium',
-  FacialHairType.blank: 'blank',
   FacialHairType.moustacheFancy: 'moustacheFancy',
   FacialHairType.moustacheMagnum: 'moustacheMagnum',
 };

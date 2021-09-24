@@ -1,22 +1,22 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:textaba_avataaars/src/interfaces/svg_avatar_piece.dart';
 
+part 'accessories.freezed.dart';
 part 'accessories.g.dart';
 
-@JsonSerializable()
-class Accessories extends SvgAvatarPiece {
-  const Accessories({
-    required this.accessoryType,
-  });
+@freezed
+class Accessories extends SvgAvatarPiece with _$Accessories {
+  const factory Accessories({
+    required AccessoryType accessoryType,
+  }) = _Accessories;
 
   factory Accessories.fromJson(Map<String, dynamic> json) =>
       _$AccessoriesFromJson(json);
-  Map<String, dynamic> toJson() => _$AccessoriesToJson(this);
 
-  final AccessoryType accessoryType;
+  const Accessories._();
 
   @override
-  String get rawSvg {
+  String get componentSvg {
     switch (accessoryType) {
       case AccessoryType.blank:
         return '';
@@ -144,7 +144,12 @@ class Accessories extends SvgAvatarPiece {
   }
 
   @override
-  List<Object?> get props => [accessoryType];
+  String get rawSvg {
+    if (accessoryType == AccessoryType.blank) {
+      return SvgAvatarPiece.emptySvg;
+    }
+    return '''<svg width="20px" height="20px" viewBox="-3 -50 120 170" >$componentSvg</svg>''';
+  }
 }
 
 enum AccessoryType {

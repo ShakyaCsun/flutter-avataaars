@@ -6,11 +6,11 @@ part of 'mouth.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Mouth _$MouthFromJson(Map<String, dynamic> json) => Mouth(
+_$_Mouth _$$_MouthFromJson(Map<String, dynamic> json) => _$_Mouth(
       mouthType: _$enumDecode(_$MouthTypeEnumMap, json['mouth_type']),
     );
 
-Map<String, dynamic> _$MouthToJson(Mouth instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MouthToJson(_$_Mouth instance) => <String, dynamic>{
       'mouth_type': _$MouthTypeEnumMap[instance.mouthType],
     };
 
