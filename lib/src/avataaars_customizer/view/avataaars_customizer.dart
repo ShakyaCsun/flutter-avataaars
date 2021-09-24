@@ -51,7 +51,7 @@ class _AvataaarsCustomizerView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(Insets.small),
             child: Row(
               children: [
                 Text(
