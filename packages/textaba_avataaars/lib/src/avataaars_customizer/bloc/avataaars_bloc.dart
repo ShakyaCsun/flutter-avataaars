@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:avataaars_models/avataaars_models.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -8,6 +10,61 @@ class AvataaarsBloc extends Bloc<AvataaarsEvent, Avatar> {
   AvataaarsBloc({
     Avatar? initialAvatar,
   }) : super(initialAvatar ?? Avatar.defaultAvatar) {
+    final _rnd = Random();
+    on<RandomAvataaarRequested>((event, emit) {
+      final randomAvataaar = Avatar(
+        cloth: Cloth(
+          clothType: ClothType.values[_rnd.nextInt(
+            ClothType.values.length,
+          )],
+          clothColor: ClothColor.values[_rnd.nextInt(
+            ClothColor.values.length,
+          )],
+        ),
+        eyeBrow: EyeBrow(
+          eyeBrowType: EyeBrowType.values[_rnd.nextInt(
+            EyeBrowType.values.length,
+          )],
+        ),
+        eyes: Eyes(
+          eyesType: EyesType.values[_rnd.nextInt(
+            EyesType.values.length,
+          )],
+        ),
+        mouth: Mouth(
+          mouthType: MouthType.values[_rnd.nextInt(
+            MouthType.values.length,
+          )],
+        ),
+        accessories: Accessories(
+          accessoryType: AccessoryType.values[_rnd.nextInt(
+            AccessoryType.values.length,
+          )],
+        ),
+        facialHair: FacialHair(
+          facialHairType: FacialHairType.values[_rnd.nextInt(
+            FacialHairType.values.length,
+          )],
+          facialHairColor: FacialHairColor.values[_rnd.nextInt(
+            FacialHairColor.values.length,
+          )],
+        ),
+        hairStyle: HairStyle(
+          hairStyleType: HairStyleType.values[_rnd.nextInt(
+            HairStyleType.values.length,
+          )],
+          hairColor: HairColor.values[_rnd.nextInt(
+            HairColor.values.length,
+          )],
+        ),
+        skin: Skin(
+          skinColor: SkinColor.values[_rnd.nextInt(
+            SkinColor.values.length,
+          )],
+        ),
+      );
+      emit(randomAvataaar);
+    });
     on<HairStyleChanged>(
       (event, emit) {
         emit(

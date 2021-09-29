@@ -7,6 +7,8 @@ abstract class AvataaarsEvent extends Equatable {
   List<Object?> get props => [];
 }
 
+class RandomAvataaarRequested extends AvataaarsEvent {}
+
 class HairStyleChanged extends AvataaarsEvent {
   const HairStyleChanged({required this.newHairStyle});
 
