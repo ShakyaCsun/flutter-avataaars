@@ -15,8 +15,7 @@ class MouthPicker extends StatelessWidget {
         return state.mouth;
       },
       builder: (context, mouth) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: mouthCount,
           itemBuilder: (context, index) {
             final mouthType = MouthType.values[index];

@@ -14,17 +14,22 @@ class AvataaarsCustomizer extends StatelessWidget {
     Key? key,
     required this.onAvatarSaved,
     this.initialAvatar,
+    this.colorOutlineColor,
   }) : super(key: key);
 
   final Avatar? initialAvatar;
   final AvatarSavedCallback onAvatarSaved;
+  final Color? colorOutlineColor;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AvataaarsBloc(initialAvatar: initialAvatar),
-      child: _AvataaarsCustomizerView(
-        onAvatarSaved: onAvatarSaved,
+      child: RepositoryProvider(
+        create: (context) => colorOutlineColor,
+        child: _AvataaarsCustomizerView(
+          onAvatarSaved: onAvatarSaved,
+        ),
       ),
     );
   }
@@ -92,7 +97,7 @@ class _AllPickers extends StatelessWidget {
           Material(
             elevation: 4,
             child: SizedBox(
-              height: kTextTabBarHeight,
+              height: kToolbarHeight,
               child: Center(
                 child: TabBar(
                   isScrollable: true,
@@ -153,7 +158,7 @@ class _MyTabIcon extends StatelessWidget {
         child: SvgPicture.asset(
           svgPath,
           package: packageName,
-          height: 24,
+          height: 32,
         ),
       ),
     );

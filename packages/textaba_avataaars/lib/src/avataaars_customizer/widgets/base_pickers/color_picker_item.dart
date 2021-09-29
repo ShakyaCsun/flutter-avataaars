@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:textaba_avataaars/src/utils/utils.dart';
 
 class ColorPickerItem extends StatelessWidget {
@@ -31,9 +32,10 @@ class ColorPickerItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(Insets.large * 2),
           child: CircleAvatar(
-            backgroundColor: Colors.black,
+            backgroundColor: RepositoryProvider.of<Color?>(context) ??
+                Theme.of(context).colorScheme.onSurface,
             child: Padding(
-              padding: const EdgeInsets.all(Insets.small / 2),
+              padding: const EdgeInsets.all(2),
               child: CircleAvatar(
                 backgroundColor: color,
                 radius: double.infinity,

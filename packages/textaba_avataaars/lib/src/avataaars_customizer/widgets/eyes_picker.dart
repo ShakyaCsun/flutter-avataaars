@@ -15,8 +15,7 @@ class EyesPicker extends StatelessWidget {
         return state.eyes;
       },
       builder: (context, eyes) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: eyesCount,
           itemBuilder: (context, index) {
             final eyesType = EyesType.values[index];

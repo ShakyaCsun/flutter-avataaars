@@ -15,8 +15,7 @@ class SkinPicker extends StatelessWidget {
         return state.skin;
       },
       builder: (context, skin) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: skinColorCount,
           itemBuilder: (context, index) {
             final skinColor = SkinColor.values[index];

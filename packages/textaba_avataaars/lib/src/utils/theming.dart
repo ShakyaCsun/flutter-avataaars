@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Insets {
   const Insets._();
@@ -13,7 +13,7 @@ class MyGridDelegate {
   static SliverGridDelegate get delegate =>
       const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
+        mainAxisSpacing: Insets.small,
+        crossAxisSpacing: Insets.small,
       );
 }

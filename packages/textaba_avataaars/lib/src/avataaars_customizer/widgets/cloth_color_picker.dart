@@ -15,8 +15,7 @@ class ClothColorPicker extends StatelessWidget {
         return state.cloth.clothColor;
       },
       builder: (context, clothColor) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: clothColorCount,
           itemBuilder: (context, index) {
             final currentClothColor = ClothColor.values[index];

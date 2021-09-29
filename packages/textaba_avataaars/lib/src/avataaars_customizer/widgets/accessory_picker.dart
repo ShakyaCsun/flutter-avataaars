@@ -15,8 +15,7 @@ class AccessoryPicker extends StatelessWidget {
         return state.accessories;
       },
       builder: (context, accessory) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: accessoryCount,
           itemBuilder: (context, index) {
             final accessoryType = AccessoryType.values[index];

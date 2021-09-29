@@ -15,8 +15,7 @@ class ClothPicker extends StatelessWidget {
         return state.cloth;
       },
       builder: (context, cloth) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: clothCount,
           itemBuilder: (context, index) {
             final clothType = ClothType.values[index];

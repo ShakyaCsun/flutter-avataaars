@@ -15,8 +15,7 @@ class FacialHairPicker extends StatelessWidget {
         return state.facialHair;
       },
       builder: (context, facialHair) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: facialHairCount,
           itemBuilder: (context, index) {
             final facialHairType = FacialHairType.values[index];

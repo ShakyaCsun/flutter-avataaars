@@ -15,8 +15,7 @@ class HairStylePicker extends StatelessWidget {
         return state.hairStyle;
       },
       builder: (context, hairStyle) {
-        return GridView.builder(
-          gridDelegate: MyGridDelegate.delegate,
+        return PickerGridView(
           itemCount: hairStyleCount,
           itemBuilder: (context, index) {
             final hairStyleType = HairStyleType.values[index];
