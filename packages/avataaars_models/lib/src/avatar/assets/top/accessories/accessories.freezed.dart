@@ -27,7 +27,7 @@ class _$AccessoriesTearOff {
     );
   }
 
-  Accessories fromJson(Map<String, Object> json) {
+  Accessories fromJson(Map<String, Object?> json) {
     return Accessories.fromJson(json);
   }
 }
@@ -126,15 +126,14 @@ class _$_Accessories extends _Accessories {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Accessories &&
+        (other.runtimeType == runtimeType &&
+            other is _Accessories &&
             (identical(other.accessoryType, accessoryType) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessoryType, accessoryType)));
+                other.accessoryType == accessoryType));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(accessoryType);
+  int get hashCode => Object.hash(runtimeType, accessoryType);
 
   @JsonKey(ignore: true)
   @override
@@ -156,7 +155,7 @@ abstract class _Accessories extends Accessories {
       _$_Accessories.fromJson;
 
   @override
-  AccessoryType get accessoryType => throw _privateConstructorUsedError;
+  AccessoryType get accessoryType;
   @override
   @JsonKey(ignore: true)
   _$AccessoriesCopyWith<_Accessories> get copyWith =>

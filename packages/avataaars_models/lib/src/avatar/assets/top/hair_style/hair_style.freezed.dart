@@ -29,7 +29,7 @@ class _$HairStyleTearOff {
     );
   }
 
-  HairStyle fromJson(Map<String, Object> json) {
+  HairStyle fromJson(Map<String, Object?> json) {
     return HairStyle.fromJson(json);
   }
 }
@@ -139,20 +139,16 @@ class _$_HairStyle extends _HairStyle {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HairStyle &&
+        (other.runtimeType == runtimeType &&
+            other is _HairStyle &&
             (identical(other.hairStyleType, hairStyleType) ||
-                const DeepCollectionEquality()
-                    .equals(other.hairStyleType, hairStyleType)) &&
+                other.hairStyleType == hairStyleType) &&
             (identical(other.hairColor, hairColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.hairColor, hairColor)));
+                other.hairColor == hairColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(hairStyleType) ^
-      const DeepCollectionEquality().hash(hairColor);
+  int get hashCode => Object.hash(runtimeType, hairStyleType, hairColor);
 
   @JsonKey(ignore: true)
   @override
@@ -175,9 +171,9 @@ abstract class _HairStyle extends HairStyle {
       _$_HairStyle.fromJson;
 
   @override
-  HairStyleType get hairStyleType => throw _privateConstructorUsedError;
+  HairStyleType get hairStyleType;
   @override
-  HairColor get hairColor => throw _privateConstructorUsedError;
+  HairColor get hairColor;
   @override
   @JsonKey(ignore: true)
   _$HairStyleCopyWith<_HairStyle> get copyWith =>

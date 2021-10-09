@@ -27,7 +27,7 @@ class _$MouthTearOff {
     );
   }
 
-  Mouth fromJson(Map<String, Object> json) {
+  Mouth fromJson(Map<String, Object?> json) {
     return Mouth.fromJson(json);
   }
 }
@@ -121,15 +121,14 @@ class _$_Mouth extends _Mouth {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Mouth &&
+        (other.runtimeType == runtimeType &&
+            other is _Mouth &&
             (identical(other.mouthType, mouthType) ||
-                const DeepCollectionEquality()
-                    .equals(other.mouthType, mouthType)));
+                other.mouthType == mouthType));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(mouthType);
+  int get hashCode => Object.hash(runtimeType, mouthType);
 
   @JsonKey(ignore: true)
   @override
@@ -149,7 +148,7 @@ abstract class _Mouth extends Mouth {
   factory _Mouth.fromJson(Map<String, dynamic> json) = _$_Mouth.fromJson;
 
   @override
-  MouthType get mouthType => throw _privateConstructorUsedError;
+  MouthType get mouthType;
   @override
   @JsonKey(ignore: true)
   _$MouthCopyWith<_Mouth> get copyWith => throw _privateConstructorUsedError;

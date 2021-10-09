@@ -27,7 +27,7 @@ class _$EyesTearOff {
     );
   }
 
-  Eyes fromJson(Map<String, Object> json) {
+  Eyes fromJson(Map<String, Object?> json) {
     return Eyes.fromJson(json);
   }
 }
@@ -120,15 +120,14 @@ class _$_Eyes extends _Eyes {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Eyes &&
+        (other.runtimeType == runtimeType &&
+            other is _Eyes &&
             (identical(other.eyesType, eyesType) ||
-                const DeepCollectionEquality()
-                    .equals(other.eyesType, eyesType)));
+                other.eyesType == eyesType));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(eyesType);
+  int get hashCode => Object.hash(runtimeType, eyesType);
 
   @JsonKey(ignore: true)
   @override
@@ -148,7 +147,7 @@ abstract class _Eyes extends Eyes {
   factory _Eyes.fromJson(Map<String, dynamic> json) = _$_Eyes.fromJson;
 
   @override
-  EyesType get eyesType => throw _privateConstructorUsedError;
+  EyesType get eyesType;
   @override
   @JsonKey(ignore: true)
   _$EyesCopyWith<_Eyes> get copyWith => throw _privateConstructorUsedError;

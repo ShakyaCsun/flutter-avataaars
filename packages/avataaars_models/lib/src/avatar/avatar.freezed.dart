@@ -42,7 +42,7 @@ class _$AvatarTearOff {
     );
   }
 
-  Avatar fromJson(Map<String, Object> json) {
+  Avatar fromJson(Map<String, Object?> json) {
     return Avatar.fromJson(json);
   }
 }
@@ -334,40 +334,24 @@ class _$_Avatar extends _Avatar {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Avatar &&
-            (identical(other.cloth, cloth) ||
-                const DeepCollectionEquality().equals(other.cloth, cloth)) &&
-            (identical(other.eyeBrow, eyeBrow) ||
-                const DeepCollectionEquality()
-                    .equals(other.eyeBrow, eyeBrow)) &&
-            (identical(other.eyes, eyes) ||
-                const DeepCollectionEquality().equals(other.eyes, eyes)) &&
-            (identical(other.mouth, mouth) ||
-                const DeepCollectionEquality().equals(other.mouth, mouth)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Avatar &&
+            (identical(other.cloth, cloth) || other.cloth == cloth) &&
+            (identical(other.eyeBrow, eyeBrow) || other.eyeBrow == eyeBrow) &&
+            (identical(other.eyes, eyes) || other.eyes == eyes) &&
+            (identical(other.mouth, mouth) || other.mouth == mouth) &&
             (identical(other.accessories, accessories) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessories, accessories)) &&
+                other.accessories == accessories) &&
             (identical(other.facialHair, facialHair) ||
-                const DeepCollectionEquality()
-                    .equals(other.facialHair, facialHair)) &&
+                other.facialHair == facialHair) &&
             (identical(other.hairStyle, hairStyle) ||
-                const DeepCollectionEquality()
-                    .equals(other.hairStyle, hairStyle)) &&
-            (identical(other.skin, skin) ||
-                const DeepCollectionEquality().equals(other.skin, skin)));
+                other.hairStyle == hairStyle) &&
+            (identical(other.skin, skin) || other.skin == skin));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cloth) ^
-      const DeepCollectionEquality().hash(eyeBrow) ^
-      const DeepCollectionEquality().hash(eyes) ^
-      const DeepCollectionEquality().hash(mouth) ^
-      const DeepCollectionEquality().hash(accessories) ^
-      const DeepCollectionEquality().hash(facialHair) ^
-      const DeepCollectionEquality().hash(hairStyle) ^
-      const DeepCollectionEquality().hash(skin);
+  int get hashCode => Object.hash(runtimeType, cloth, eyeBrow, eyes, mouth,
+      accessories, facialHair, hairStyle, skin);
 
   @JsonKey(ignore: true)
   @override
@@ -395,21 +379,21 @@ abstract class _Avatar extends Avatar {
   factory _Avatar.fromJson(Map<String, dynamic> json) = _$_Avatar.fromJson;
 
   @override
-  Cloth get cloth => throw _privateConstructorUsedError;
+  Cloth get cloth;
   @override
-  EyeBrow get eyeBrow => throw _privateConstructorUsedError;
+  EyeBrow get eyeBrow;
   @override
-  Eyes get eyes => throw _privateConstructorUsedError;
+  Eyes get eyes;
   @override
-  Mouth get mouth => throw _privateConstructorUsedError;
+  Mouth get mouth;
   @override
-  Accessories get accessories => throw _privateConstructorUsedError;
+  Accessories get accessories;
   @override
-  FacialHair get facialHair => throw _privateConstructorUsedError;
+  FacialHair get facialHair;
   @override
-  HairStyle get hairStyle => throw _privateConstructorUsedError;
+  HairStyle get hairStyle;
   @override
-  Skin get skin => throw _privateConstructorUsedError;
+  Skin get skin;
   @override
   @JsonKey(ignore: true)
   _$AvatarCopyWith<_Avatar> get copyWith => throw _privateConstructorUsedError;

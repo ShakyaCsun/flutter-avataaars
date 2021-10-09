@@ -28,7 +28,7 @@ class _$ClothTearOff {
     );
   }
 
-  Cloth fromJson(Map<String, Object> json) {
+  Cloth fromJson(Map<String, Object?> json) {
     return Cloth.fromJson(json);
   }
 }
@@ -136,20 +136,16 @@ class _$_Cloth extends _Cloth {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Cloth &&
+        (other.runtimeType == runtimeType &&
+            other is _Cloth &&
             (identical(other.clothType, clothType) ||
-                const DeepCollectionEquality()
-                    .equals(other.clothType, clothType)) &&
+                other.clothType == clothType) &&
             (identical(other.clothColor, clothColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.clothColor, clothColor)));
+                other.clothColor == clothColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(clothType) ^
-      const DeepCollectionEquality().hash(clothColor);
+  int get hashCode => Object.hash(runtimeType, clothType, clothColor);
 
   @JsonKey(ignore: true)
   @override
@@ -171,9 +167,9 @@ abstract class _Cloth extends Cloth {
   factory _Cloth.fromJson(Map<String, dynamic> json) = _$_Cloth.fromJson;
 
   @override
-  ClothType get clothType => throw _privateConstructorUsedError;
+  ClothType get clothType;
   @override
-  ClothColor get clothColor => throw _privateConstructorUsedError;
+  ClothColor get clothColor;
   @override
   @JsonKey(ignore: true)
   _$ClothCopyWith<_Cloth> get copyWith => throw _privateConstructorUsedError;

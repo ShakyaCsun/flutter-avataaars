@@ -27,7 +27,7 @@ class _$SkinTearOff {
     );
   }
 
-  Skin fromJson(Map<String, Object> json) {
+  Skin fromJson(Map<String, Object?> json) {
     return Skin.fromJson(json);
   }
 }
@@ -120,15 +120,14 @@ class _$_Skin extends _Skin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Skin &&
+        (other.runtimeType == runtimeType &&
+            other is _Skin &&
             (identical(other.skinColor, skinColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.skinColor, skinColor)));
+                other.skinColor == skinColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(skinColor);
+  int get hashCode => Object.hash(runtimeType, skinColor);
 
   @JsonKey(ignore: true)
   @override
@@ -148,7 +147,7 @@ abstract class _Skin extends Skin {
   factory _Skin.fromJson(Map<String, dynamic> json) = _$_Skin.fromJson;
 
   @override
-  SkinColor get skinColor => throw _privateConstructorUsedError;
+  SkinColor get skinColor;
   @override
   @JsonKey(ignore: true)
   _$SkinCopyWith<_Skin> get copyWith => throw _privateConstructorUsedError;

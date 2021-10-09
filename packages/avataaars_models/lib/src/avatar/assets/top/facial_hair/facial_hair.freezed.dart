@@ -30,7 +30,7 @@ class _$FacialHairTearOff {
     );
   }
 
-  FacialHair fromJson(Map<String, Object> json) {
+  FacialHair fromJson(Map<String, Object?> json) {
     return FacialHair.fromJson(json);
   }
 }
@@ -143,20 +143,16 @@ class _$_FacialHair extends _FacialHair {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FacialHair &&
+        (other.runtimeType == runtimeType &&
+            other is _FacialHair &&
             (identical(other.facialHairType, facialHairType) ||
-                const DeepCollectionEquality()
-                    .equals(other.facialHairType, facialHairType)) &&
+                other.facialHairType == facialHairType) &&
             (identical(other.facialHairColor, facialHairColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.facialHairColor, facialHairColor)));
+                other.facialHairColor == facialHairColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(facialHairType) ^
-      const DeepCollectionEquality().hash(facialHairColor);
+  int get hashCode => Object.hash(runtimeType, facialHairType, facialHairColor);
 
   @JsonKey(ignore: true)
   @override
@@ -179,9 +175,9 @@ abstract class _FacialHair extends FacialHair {
       _$_FacialHair.fromJson;
 
   @override
-  FacialHairType get facialHairType => throw _privateConstructorUsedError;
+  FacialHairType get facialHairType;
   @override
-  FacialHairColor get facialHairColor => throw _privateConstructorUsedError;
+  FacialHairColor get facialHairColor;
   @override
   @JsonKey(ignore: true)
   _$FacialHairCopyWith<_FacialHair> get copyWith =>

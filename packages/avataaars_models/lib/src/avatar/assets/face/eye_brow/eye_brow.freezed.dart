@@ -27,7 +27,7 @@ class _$EyeBrowTearOff {
     );
   }
 
-  EyeBrow fromJson(Map<String, Object> json) {
+  EyeBrow fromJson(Map<String, Object?> json) {
     return EyeBrow.fromJson(json);
   }
 }
@@ -121,15 +121,14 @@ class _$_EyeBrow extends _EyeBrow {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EyeBrow &&
+        (other.runtimeType == runtimeType &&
+            other is _EyeBrow &&
             (identical(other.eyeBrowType, eyeBrowType) ||
-                const DeepCollectionEquality()
-                    .equals(other.eyeBrowType, eyeBrowType)));
+                other.eyeBrowType == eyeBrowType));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(eyeBrowType);
+  int get hashCode => Object.hash(runtimeType, eyeBrowType);
 
   @JsonKey(ignore: true)
   @override
@@ -149,7 +148,7 @@ abstract class _EyeBrow extends EyeBrow {
   factory _EyeBrow.fromJson(Map<String, dynamic> json) = _$_EyeBrow.fromJson;
 
   @override
-  EyeBrowType get eyeBrowType => throw _privateConstructorUsedError;
+  EyeBrowType get eyeBrowType;
   @override
   @JsonKey(ignore: true)
   _$EyeBrowCopyWith<_EyeBrow> get copyWith =>
