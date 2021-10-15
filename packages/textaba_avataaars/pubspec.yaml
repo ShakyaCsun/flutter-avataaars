@@ -14,7 +14,7 @@ dependencies:
   bloc: ^7.2.0
   equatable: ^2.0.3
   flutter_bloc: ^7.3.0
-  flutter_svg: ^0.22.0
+  flutter_svg: ^0.23.0+1
 
 dev_dependencies:
   flutter_test:

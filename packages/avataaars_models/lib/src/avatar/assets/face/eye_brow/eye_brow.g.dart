@@ -7,39 +7,13 @@ part of 'eye_brow.dart';
 // **************************************************************************
 
 _$_EyeBrow _$$_EyeBrowFromJson(Map<String, dynamic> json) => _$_EyeBrow(
-      eyeBrowType: _$enumDecode(_$EyeBrowTypeEnumMap, json['eye_brow_type']),
+      eyeBrowType: $enumDecode(_$EyeBrowTypeEnumMap, json['eye_brow_type']),
     );
 
 Map<String, dynamic> _$$_EyeBrowToJson(_$_EyeBrow instance) =>
     <String, dynamic>{
       'eye_brow_type': _$EyeBrowTypeEnumMap[instance.eyeBrowType],
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$EyeBrowTypeEnumMap = {
   EyeBrowType.angry: 'angry',

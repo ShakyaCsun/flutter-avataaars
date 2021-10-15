@@ -8,8 +8,8 @@ part of 'hair_style.dart';
 
 _$_HairStyle _$$_HairStyleFromJson(Map<String, dynamic> json) => _$_HairStyle(
       hairStyleType:
-          _$enumDecode(_$HairStyleTypeEnumMap, json['hair_style_type']),
-      hairColor: _$enumDecode(_$HairColorEnumMap, json['hair_color']),
+          $enumDecode(_$HairStyleTypeEnumMap, json['hair_style_type']),
+      hairColor: $enumDecode(_$HairColorEnumMap, json['hair_color']),
     );
 
 Map<String, dynamic> _$$_HairStyleToJson(_$_HairStyle instance) =>
@@ -17,32 +17,6 @@ Map<String, dynamic> _$$_HairStyleToJson(_$_HairStyle instance) =>
       'hair_style_type': _$HairStyleTypeEnumMap[instance.hairStyleType],
       'hair_color': _$HairColorEnumMap[instance.hairColor],
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$HairStyleTypeEnumMap = {
   HairStyleType.noHair: 'noHair',

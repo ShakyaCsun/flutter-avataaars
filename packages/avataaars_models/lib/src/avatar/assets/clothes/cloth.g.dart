@@ -7,40 +7,14 @@ part of 'cloth.dart';
 // **************************************************************************
 
 _$_Cloth _$$_ClothFromJson(Map<String, dynamic> json) => _$_Cloth(
-      clothType: _$enumDecode(_$ClothTypeEnumMap, json['cloth_type']),
-      clothColor: _$enumDecode(_$ClothColorEnumMap, json['cloth_color']),
+      clothType: $enumDecode(_$ClothTypeEnumMap, json['cloth_type']),
+      clothColor: $enumDecode(_$ClothColorEnumMap, json['cloth_color']),
     );
 
 Map<String, dynamic> _$$_ClothToJson(_$_Cloth instance) => <String, dynamic>{
       'cloth_type': _$ClothTypeEnumMap[instance.clothType],
       'cloth_color': _$ClothColorEnumMap[instance.clothColor],
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$ClothTypeEnumMap = {
   ClothType.blazerShirt: 'blazerShirt',

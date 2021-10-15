@@ -7,38 +7,12 @@ part of 'eyes.dart';
 // **************************************************************************
 
 _$_Eyes _$$_EyesFromJson(Map<String, dynamic> json) => _$_Eyes(
-      eyesType: _$enumDecode(_$EyesTypeEnumMap, json['eyes_type']),
+      eyesType: $enumDecode(_$EyesTypeEnumMap, json['eyes_type']),
     );
 
 Map<String, dynamic> _$$_EyesToJson(_$_Eyes instance) => <String, dynamic>{
       'eyes_type': _$EyesTypeEnumMap[instance.eyesType],
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$EyesTypeEnumMap = {
   EyesType.basic: 'basic',
