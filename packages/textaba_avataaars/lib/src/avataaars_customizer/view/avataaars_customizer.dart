@@ -49,76 +49,80 @@ class _AvataaarsCustomizerView extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: LayoutBuilder(builder: (context, constraints) {
-              if (constraints.maxWidth < 380) {
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                if (constraints.maxWidth < 380) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: BlocBuilder<AvataaarsBloc, Avatar>(
+                          builder: (context, state) {
+                            return SvgPicture.string(state.rawSvg);
+                          },
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              context.read<AvataaarsBloc>().add(
+                                    RandomAvataaarRequested(),
+                                  );
+                            },
+                            iconSize: 32,
+                            icon: const Icon(
+                              Icons.shuffle_sharp,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              onAvatarSaved(
+                                context.read<AvataaarsBloc>().state,
+                              );
+                            },
+                            iconSize: 32,
+                            icon: const Icon(
+                              Icons.save_sharp,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                }
                 return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Expanded(
-                      child: BlocBuilder<AvataaarsBloc, Avatar>(
-                        builder: (context, state) {
-                          return SvgPicture.string(state.rawSvg);
-                        },
+                    IconButton(
+                      onPressed: () {
+                        context.read<AvataaarsBloc>().add(
+                              RandomAvataaarRequested(),
+                            );
+                      },
+                      iconSize: 32,
+                      icon: const Icon(
+                        Icons.shuffle_sharp,
                       ),
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            context.read<AvataaarsBloc>().add(
-                                  RandomAvataaarRequested(),
-                                );
-                          },
-                          iconSize: 32,
-                          icon: const Icon(
-                            Icons.shuffle_sharp,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            onAvatarSaved(context.read<AvataaarsBloc>().state);
-                          },
-                          iconSize: 32,
-                          icon: const Icon(
-                            Icons.save_sharp,
-                          ),
-                        ),
-                      ],
+                    BlocBuilder<AvataaarsBloc, Avatar>(
+                      builder: (context, state) {
+                        return SvgPicture.string(state.rawSvg);
+                      },
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        onAvatarSaved(context.read<AvataaarsBloc>().state);
+                      },
+                      iconSize: 32,
+                      icon: const Icon(
+                        Icons.save_sharp,
+                      ),
                     ),
                   ],
                 );
-              }
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      context.read<AvataaarsBloc>().add(
-                            RandomAvataaarRequested(),
-                          );
-                    },
-                    iconSize: 32,
-                    icon: const Icon(
-                      Icons.shuffle_sharp,
-                    ),
-                  ),
-                  BlocBuilder<AvataaarsBloc, Avatar>(
-                    builder: (context, state) {
-                      return SvgPicture.string(state.rawSvg);
-                    },
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      onAvatarSaved(context.read<AvataaarsBloc>().state);
-                    },
-                    iconSize: 32,
-                    icon: const Icon(
-                      Icons.save_sharp,
-                    ),
-                  ),
-                ],
-              );
-            }),
+              },
+            ),
           ),
           const Expanded(
             flex: 2,
