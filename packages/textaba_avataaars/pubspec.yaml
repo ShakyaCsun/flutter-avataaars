@@ -11,10 +11,10 @@ dependencies:
     sdk: flutter
   avataaars_models:
     path: ../avataaars_models
-  bloc: ^8.0.1
+  bloc: ^8.0.2
   equatable: ^2.0.3
-  flutter_bloc: ^8.0.0
-  flutter_svg: ^0.23.0+1
+  flutter_bloc: ^8.0.1
+  flutter_svg: ^1.0.1
 
 dev_dependencies:
   flutter_test:
