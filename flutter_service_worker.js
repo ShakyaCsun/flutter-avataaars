@@ -6,7 +6,7 @@ const RESOURCES = {
   "assets/AssetManifest.json": "3b655c0b98e58b4c71f3609a102a274d",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "0b9c78c2734a58bf7de1fc02508e259f",
+"assets/NOTICES": "c269da1bc7f39d4b2e159a006f4a81fc",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/textaba_avataaars/assets/accessory.svg": "7035491085ebcfde73d45f4e809d8ce0",
 "assets/packages/textaba_avataaars/assets/cloth.svg": "3ddf2fac1a2ff1d658ce905b10651fbc",
@@ -19,16 +19,20 @@ const RESOURCES = {
 "assets/packages/textaba_avataaars/assets/hair_color.svg": "4cecba0835dad27d06899aab45c03885",
 "assets/packages/textaba_avataaars/assets/mouth.svg": "019acb77500d092d3347818a4cc583e5",
 "assets/packages/textaba_avataaars/assets/skin.svg": "1c6f80e6be0e8eb227b90cae0895a396",
+"canvaskit/canvaskit.js": "62b9906717d7215a6ff4cc24efbd1b5c",
+"canvaskit/canvaskit.wasm": "b179ba02b7a9f61ebc108f82c5a1ecdb",
+"canvaskit/profiling/canvaskit.js": "3783918f48ef691e230156c251169480",
+"canvaskit/profiling/canvaskit.wasm": "6d1b0fc1ec88c3110db88caa3393c580",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "196a8251ebe68604622f2a0e543ed251",
-"/": "196a8251ebe68604622f2a0e543ed251",
-"main.dart.js": "bb94877b858876182c82e40a7662463d",
+"index.html": "66d804fde39310963db41937d1e165e4",
+"/": "66d804fde39310963db41937d1e165e4",
+"main.dart.js": "cddfd80542aa522538b2ee28da4c3dff",
 "manifest.json": "9a0de1ff26661cd281cb9deb3db33b02",
-"version.json": "4b6db237b3514a88107a422469adfb0f"
+"version.json": "ff966ab969ba381b900e61629bfb9789"
 };
 
 // The application shell files that are downloaded before a service worker can
