@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'facial_hair.dart';
@@ -145,14 +146,17 @@ class _$_FacialHair extends _FacialHair {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _FacialHair &&
-            (identical(other.facialHairType, facialHairType) ||
-                other.facialHairType == facialHairType) &&
-            (identical(other.facialHairColor, facialHairColor) ||
-                other.facialHairColor == facialHairColor));
+            const DeepCollectionEquality()
+                .equals(other.facialHairType, facialHairType) &&
+            const DeepCollectionEquality()
+                .equals(other.facialHairColor, facialHairColor));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, facialHairType, facialHairColor);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(facialHairType),
+      const DeepCollectionEquality().hash(facialHairColor));
 
   @JsonKey(ignore: true)
   @override

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'avatar.dart';
@@ -336,22 +337,29 @@ class _$_Avatar extends _Avatar {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Avatar &&
-            (identical(other.cloth, cloth) || other.cloth == cloth) &&
-            (identical(other.eyeBrow, eyeBrow) || other.eyeBrow == eyeBrow) &&
-            (identical(other.eyes, eyes) || other.eyes == eyes) &&
-            (identical(other.mouth, mouth) || other.mouth == mouth) &&
-            (identical(other.accessories, accessories) ||
-                other.accessories == accessories) &&
-            (identical(other.facialHair, facialHair) ||
-                other.facialHair == facialHair) &&
-            (identical(other.hairStyle, hairStyle) ||
-                other.hairStyle == hairStyle) &&
-            (identical(other.skin, skin) || other.skin == skin));
+            const DeepCollectionEquality().equals(other.cloth, cloth) &&
+            const DeepCollectionEquality().equals(other.eyeBrow, eyeBrow) &&
+            const DeepCollectionEquality().equals(other.eyes, eyes) &&
+            const DeepCollectionEquality().equals(other.mouth, mouth) &&
+            const DeepCollectionEquality()
+                .equals(other.accessories, accessories) &&
+            const DeepCollectionEquality()
+                .equals(other.facialHair, facialHair) &&
+            const DeepCollectionEquality().equals(other.hairStyle, hairStyle) &&
+            const DeepCollectionEquality().equals(other.skin, skin));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, cloth, eyeBrow, eyes, mouth,
-      accessories, facialHair, hairStyle, skin);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(cloth),
+      const DeepCollectionEquality().hash(eyeBrow),
+      const DeepCollectionEquality().hash(eyes),
+      const DeepCollectionEquality().hash(mouth),
+      const DeepCollectionEquality().hash(accessories),
+      const DeepCollectionEquality().hash(facialHair),
+      const DeepCollectionEquality().hash(hairStyle),
+      const DeepCollectionEquality().hash(skin));
 
   @JsonKey(ignore: true)
   @override
