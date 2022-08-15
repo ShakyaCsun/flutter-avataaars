@@ -12,31 +12,11 @@ part of 'hair_style.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 HairStyle _$HairStyleFromJson(Map<String, dynamic> json) {
   return _HairStyle.fromJson(json);
 }
-
-/// @nodoc
-class _$HairStyleTearOff {
-  const _$HairStyleTearOff();
-
-  _HairStyle call(
-      {required HairStyleType hairStyleType, required HairColor hairColor}) {
-    return _HairStyle(
-      hairStyleType: hairStyleType,
-      hairColor: hairColor,
-    );
-  }
-
-  HairStyle fromJson(Map<String, Object?> json) {
-    return HairStyle.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $HairStyle = _$HairStyleTearOff();
 
 /// @nodoc
 mixin _$HairStyle {
@@ -83,29 +63,30 @@ class _$HairStyleCopyWithImpl<$Res> implements $HairStyleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$HairStyleCopyWith<$Res> implements $HairStyleCopyWith<$Res> {
-  factory _$HairStyleCopyWith(
-          _HairStyle value, $Res Function(_HairStyle) then) =
-      __$HairStyleCopyWithImpl<$Res>;
+abstract class _$$_HairStyleCopyWith<$Res> implements $HairStyleCopyWith<$Res> {
+  factory _$$_HairStyleCopyWith(
+          _$_HairStyle value, $Res Function(_$_HairStyle) then) =
+      __$$_HairStyleCopyWithImpl<$Res>;
   @override
   $Res call({HairStyleType hairStyleType, HairColor hairColor});
 }
 
 /// @nodoc
-class __$HairStyleCopyWithImpl<$Res> extends _$HairStyleCopyWithImpl<$Res>
-    implements _$HairStyleCopyWith<$Res> {
-  __$HairStyleCopyWithImpl(_HairStyle _value, $Res Function(_HairStyle) _then)
-      : super(_value, (v) => _then(v as _HairStyle));
+class __$$_HairStyleCopyWithImpl<$Res> extends _$HairStyleCopyWithImpl<$Res>
+    implements _$$_HairStyleCopyWith<$Res> {
+  __$$_HairStyleCopyWithImpl(
+      _$_HairStyle _value, $Res Function(_$_HairStyle) _then)
+      : super(_value, (v) => _then(v as _$_HairStyle));
 
   @override
-  _HairStyle get _value => super._value as _HairStyle;
+  _$_HairStyle get _value => super._value as _$_HairStyle;
 
   @override
   $Res call({
     Object? hairStyleType = freezed,
     Object? hairColor = freezed,
   }) {
-    return _then(_HairStyle(
+    return _then(_$_HairStyle(
       hairStyleType: hairStyleType == freezed
           ? _value.hairStyleType
           : hairStyleType // ignore: cast_nullable_to_non_nullable
@@ -141,12 +122,13 @@ class _$_HairStyle extends _HairStyle {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _HairStyle &&
+            other is _$_HairStyle &&
             const DeepCollectionEquality()
                 .equals(other.hairStyleType, hairStyleType) &&
             const DeepCollectionEquality().equals(other.hairColor, hairColor));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -155,19 +137,21 @@ class _$_HairStyle extends _HairStyle {
 
   @JsonKey(ignore: true)
   @override
-  _$HairStyleCopyWith<_HairStyle> get copyWith =>
-      __$HairStyleCopyWithImpl<_HairStyle>(this, _$identity);
+  _$$_HairStyleCopyWith<_$_HairStyle> get copyWith =>
+      __$$_HairStyleCopyWithImpl<_$_HairStyle>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HairStyleToJson(this);
+    return _$$_HairStyleToJson(
+      this,
+    );
   }
 }
 
 abstract class _HairStyle extends HairStyle {
   const factory _HairStyle(
-      {required HairStyleType hairStyleType,
-      required HairColor hairColor}) = _$_HairStyle;
+      {required final HairStyleType hairStyleType,
+      required final HairColor hairColor}) = _$_HairStyle;
   const _HairStyle._() : super._();
 
   factory _HairStyle.fromJson(Map<String, dynamic> json) =
@@ -179,6 +163,6 @@ abstract class _HairStyle extends HairStyle {
   HairColor get hairColor;
   @override
   @JsonKey(ignore: true)
-  _$HairStyleCopyWith<_HairStyle> get copyWith =>
+  _$$_HairStyleCopyWith<_$_HairStyle> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -14,8 +14,8 @@ _$_HairStyle _$$_HairStyleFromJson(Map<String, dynamic> json) => _$_HairStyle(
 
 Map<String, dynamic> _$$_HairStyleToJson(_$_HairStyle instance) =>
     <String, dynamic>{
-      'hair_style_type': _$HairStyleTypeEnumMap[instance.hairStyleType],
-      'hair_color': _$HairColorEnumMap[instance.hairColor],
+      'hair_style_type': _$HairStyleTypeEnumMap[instance.hairStyleType]!,
+      'hair_color': _$HairColorEnumMap[instance.hairColor]!,
     };
 
 const _$HairStyleTypeEnumMap = {

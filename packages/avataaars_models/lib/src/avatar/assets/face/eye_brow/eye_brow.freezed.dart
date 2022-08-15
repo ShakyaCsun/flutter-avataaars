@@ -12,29 +12,11 @@ part of 'eye_brow.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 EyeBrow _$EyeBrowFromJson(Map<String, dynamic> json) {
   return _EyeBrow.fromJson(json);
 }
-
-/// @nodoc
-class _$EyeBrowTearOff {
-  const _$EyeBrowTearOff();
-
-  _EyeBrow call({required EyeBrowType eyeBrowType}) {
-    return _EyeBrow(
-      eyeBrowType: eyeBrowType,
-    );
-  }
-
-  EyeBrow fromJson(Map<String, Object?> json) {
-    return EyeBrow.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $EyeBrow = _$EyeBrowTearOff();
 
 /// @nodoc
 mixin _$EyeBrow {
@@ -74,27 +56,28 @@ class _$EyeBrowCopyWithImpl<$Res> implements $EyeBrowCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EyeBrowCopyWith<$Res> implements $EyeBrowCopyWith<$Res> {
-  factory _$EyeBrowCopyWith(_EyeBrow value, $Res Function(_EyeBrow) then) =
-      __$EyeBrowCopyWithImpl<$Res>;
+abstract class _$$_EyeBrowCopyWith<$Res> implements $EyeBrowCopyWith<$Res> {
+  factory _$$_EyeBrowCopyWith(
+          _$_EyeBrow value, $Res Function(_$_EyeBrow) then) =
+      __$$_EyeBrowCopyWithImpl<$Res>;
   @override
   $Res call({EyeBrowType eyeBrowType});
 }
 
 /// @nodoc
-class __$EyeBrowCopyWithImpl<$Res> extends _$EyeBrowCopyWithImpl<$Res>
-    implements _$EyeBrowCopyWith<$Res> {
-  __$EyeBrowCopyWithImpl(_EyeBrow _value, $Res Function(_EyeBrow) _then)
-      : super(_value, (v) => _then(v as _EyeBrow));
+class __$$_EyeBrowCopyWithImpl<$Res> extends _$EyeBrowCopyWithImpl<$Res>
+    implements _$$_EyeBrowCopyWith<$Res> {
+  __$$_EyeBrowCopyWithImpl(_$_EyeBrow _value, $Res Function(_$_EyeBrow) _then)
+      : super(_value, (v) => _then(v as _$_EyeBrow));
 
   @override
-  _EyeBrow get _value => super._value as _EyeBrow;
+  _$_EyeBrow get _value => super._value as _$_EyeBrow;
 
   @override
   $Res call({
     Object? eyeBrowType = freezed,
   }) {
-    return _then(_EyeBrow(
+    return _then(_$_EyeBrow(
       eyeBrowType: eyeBrowType == freezed
           ? _value.eyeBrowType
           : eyeBrowType // ignore: cast_nullable_to_non_nullable
@@ -123,28 +106,31 @@ class _$_EyeBrow extends _EyeBrow {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EyeBrow &&
+            other is _$_EyeBrow &&
             const DeepCollectionEquality()
                 .equals(other.eyeBrowType, eyeBrowType));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(eyeBrowType));
 
   @JsonKey(ignore: true)
   @override
-  _$EyeBrowCopyWith<_EyeBrow> get copyWith =>
-      __$EyeBrowCopyWithImpl<_EyeBrow>(this, _$identity);
+  _$$_EyeBrowCopyWith<_$_EyeBrow> get copyWith =>
+      __$$_EyeBrowCopyWithImpl<_$_EyeBrow>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EyeBrowToJson(this);
+    return _$$_EyeBrowToJson(
+      this,
+    );
   }
 }
 
 abstract class _EyeBrow extends EyeBrow {
-  const factory _EyeBrow({required EyeBrowType eyeBrowType}) = _$_EyeBrow;
+  const factory _EyeBrow({required final EyeBrowType eyeBrowType}) = _$_EyeBrow;
   const _EyeBrow._() : super._();
 
   factory _EyeBrow.fromJson(Map<String, dynamic> json) = _$_EyeBrow.fromJson;
@@ -153,6 +139,6 @@ abstract class _EyeBrow extends EyeBrow {
   EyeBrowType get eyeBrowType;
   @override
   @JsonKey(ignore: true)
-  _$EyeBrowCopyWith<_EyeBrow> get copyWith =>
+  _$$_EyeBrowCopyWith<_$_EyeBrow> get copyWith =>
       throw _privateConstructorUsedError;
 }

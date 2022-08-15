@@ -12,44 +12,11 @@ part of 'avatar.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Avatar _$AvatarFromJson(Map<String, dynamic> json) {
   return _Avatar.fromJson(json);
 }
-
-/// @nodoc
-class _$AvatarTearOff {
-  const _$AvatarTearOff();
-
-  _Avatar call(
-      {required Cloth cloth,
-      required EyeBrow eyeBrow,
-      required Eyes eyes,
-      required Mouth mouth,
-      required Accessories accessories,
-      required FacialHair facialHair,
-      required HairStyle hairStyle,
-      required Skin skin}) {
-    return _Avatar(
-      cloth: cloth,
-      eyeBrow: eyeBrow,
-      eyes: eyes,
-      mouth: mouth,
-      accessories: accessories,
-      facialHair: facialHair,
-      hairStyle: hairStyle,
-      skin: skin,
-    );
-  }
-
-  Avatar fromJson(Map<String, Object?> json) {
-    return Avatar.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Avatar = _$AvatarTearOff();
 
 /// @nodoc
 mixin _$Avatar {
@@ -204,9 +171,9 @@ class _$AvatarCopyWithImpl<$Res> implements $AvatarCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AvatarCopyWith<$Res> implements $AvatarCopyWith<$Res> {
-  factory _$AvatarCopyWith(_Avatar value, $Res Function(_Avatar) then) =
-      __$AvatarCopyWithImpl<$Res>;
+abstract class _$$_AvatarCopyWith<$Res> implements $AvatarCopyWith<$Res> {
+  factory _$$_AvatarCopyWith(_$_Avatar value, $Res Function(_$_Avatar) then) =
+      __$$_AvatarCopyWithImpl<$Res>;
   @override
   $Res call(
       {Cloth cloth,
@@ -237,13 +204,13 @@ abstract class _$AvatarCopyWith<$Res> implements $AvatarCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AvatarCopyWithImpl<$Res> extends _$AvatarCopyWithImpl<$Res>
-    implements _$AvatarCopyWith<$Res> {
-  __$AvatarCopyWithImpl(_Avatar _value, $Res Function(_Avatar) _then)
-      : super(_value, (v) => _then(v as _Avatar));
+class __$$_AvatarCopyWithImpl<$Res> extends _$AvatarCopyWithImpl<$Res>
+    implements _$$_AvatarCopyWith<$Res> {
+  __$$_AvatarCopyWithImpl(_$_Avatar _value, $Res Function(_$_Avatar) _then)
+      : super(_value, (v) => _then(v as _$_Avatar));
 
   @override
-  _Avatar get _value => super._value as _Avatar;
+  _$_Avatar get _value => super._value as _$_Avatar;
 
   @override
   $Res call({
@@ -256,7 +223,7 @@ class __$AvatarCopyWithImpl<$Res> extends _$AvatarCopyWithImpl<$Res>
     Object? hairStyle = freezed,
     Object? skin = freezed,
   }) {
-    return _then(_Avatar(
+    return _then(_$_Avatar(
       cloth: cloth == freezed
           ? _value.cloth
           : cloth // ignore: cast_nullable_to_non_nullable
@@ -336,7 +303,7 @@ class _$_Avatar extends _Avatar {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Avatar &&
+            other is _$_Avatar &&
             const DeepCollectionEquality().equals(other.cloth, cloth) &&
             const DeepCollectionEquality().equals(other.eyeBrow, eyeBrow) &&
             const DeepCollectionEquality().equals(other.eyes, eyes) &&
@@ -349,6 +316,7 @@ class _$_Avatar extends _Avatar {
             const DeepCollectionEquality().equals(other.skin, skin));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -363,25 +331,27 @@ class _$_Avatar extends _Avatar {
 
   @JsonKey(ignore: true)
   @override
-  _$AvatarCopyWith<_Avatar> get copyWith =>
-      __$AvatarCopyWithImpl<_Avatar>(this, _$identity);
+  _$$_AvatarCopyWith<_$_Avatar> get copyWith =>
+      __$$_AvatarCopyWithImpl<_$_Avatar>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AvatarToJson(this);
+    return _$$_AvatarToJson(
+      this,
+    );
   }
 }
 
 abstract class _Avatar extends Avatar {
   const factory _Avatar(
-      {required Cloth cloth,
-      required EyeBrow eyeBrow,
-      required Eyes eyes,
-      required Mouth mouth,
-      required Accessories accessories,
-      required FacialHair facialHair,
-      required HairStyle hairStyle,
-      required Skin skin}) = _$_Avatar;
+      {required final Cloth cloth,
+      required final EyeBrow eyeBrow,
+      required final Eyes eyes,
+      required final Mouth mouth,
+      required final Accessories accessories,
+      required final FacialHair facialHair,
+      required final HairStyle hairStyle,
+      required final Skin skin}) = _$_Avatar;
   const _Avatar._() : super._();
 
   factory _Avatar.fromJson(Map<String, dynamic> json) = _$_Avatar.fromJson;
@@ -404,5 +374,6 @@ abstract class _Avatar extends Avatar {
   Skin get skin;
   @override
   @JsonKey(ignore: true)
-  _$AvatarCopyWith<_Avatar> get copyWith => throw _privateConstructorUsedError;
+  _$$_AvatarCopyWith<_$_Avatar> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -12,29 +12,11 @@ part of 'accessories.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Accessories _$AccessoriesFromJson(Map<String, dynamic> json) {
   return _Accessories.fromJson(json);
 }
-
-/// @nodoc
-class _$AccessoriesTearOff {
-  const _$AccessoriesTearOff();
-
-  _Accessories call({required AccessoryType accessoryType}) {
-    return _Accessories(
-      accessoryType: accessoryType,
-    );
-  }
-
-  Accessories fromJson(Map<String, Object?> json) {
-    return Accessories.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Accessories = _$AccessoriesTearOff();
 
 /// @nodoc
 mixin _$Accessories {
@@ -76,30 +58,30 @@ class _$AccessoriesCopyWithImpl<$Res> implements $AccessoriesCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AccessoriesCopyWith<$Res>
+abstract class _$$_AccessoriesCopyWith<$Res>
     implements $AccessoriesCopyWith<$Res> {
-  factory _$AccessoriesCopyWith(
-          _Accessories value, $Res Function(_Accessories) then) =
-      __$AccessoriesCopyWithImpl<$Res>;
+  factory _$$_AccessoriesCopyWith(
+          _$_Accessories value, $Res Function(_$_Accessories) then) =
+      __$$_AccessoriesCopyWithImpl<$Res>;
   @override
   $Res call({AccessoryType accessoryType});
 }
 
 /// @nodoc
-class __$AccessoriesCopyWithImpl<$Res> extends _$AccessoriesCopyWithImpl<$Res>
-    implements _$AccessoriesCopyWith<$Res> {
-  __$AccessoriesCopyWithImpl(
-      _Accessories _value, $Res Function(_Accessories) _then)
-      : super(_value, (v) => _then(v as _Accessories));
+class __$$_AccessoriesCopyWithImpl<$Res> extends _$AccessoriesCopyWithImpl<$Res>
+    implements _$$_AccessoriesCopyWith<$Res> {
+  __$$_AccessoriesCopyWithImpl(
+      _$_Accessories _value, $Res Function(_$_Accessories) _then)
+      : super(_value, (v) => _then(v as _$_Accessories));
 
   @override
-  _Accessories get _value => super._value as _Accessories;
+  _$_Accessories get _value => super._value as _$_Accessories;
 
   @override
   $Res call({
     Object? accessoryType = freezed,
   }) {
-    return _then(_Accessories(
+    return _then(_$_Accessories(
       accessoryType: accessoryType == freezed
           ? _value.accessoryType
           : accessoryType // ignore: cast_nullable_to_non_nullable
@@ -128,28 +110,31 @@ class _$_Accessories extends _Accessories {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Accessories &&
+            other is _$_Accessories &&
             const DeepCollectionEquality()
                 .equals(other.accessoryType, accessoryType));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(accessoryType));
 
   @JsonKey(ignore: true)
   @override
-  _$AccessoriesCopyWith<_Accessories> get copyWith =>
-      __$AccessoriesCopyWithImpl<_Accessories>(this, _$identity);
+  _$$_AccessoriesCopyWith<_$_Accessories> get copyWith =>
+      __$$_AccessoriesCopyWithImpl<_$_Accessories>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AccessoriesToJson(this);
+    return _$$_AccessoriesToJson(
+      this,
+    );
   }
 }
 
 abstract class _Accessories extends Accessories {
-  const factory _Accessories({required AccessoryType accessoryType}) =
+  const factory _Accessories({required final AccessoryType accessoryType}) =
       _$_Accessories;
   const _Accessories._() : super._();
 
@@ -160,6 +145,6 @@ abstract class _Accessories extends Accessories {
   AccessoryType get accessoryType;
   @override
   @JsonKey(ignore: true)
-  _$AccessoriesCopyWith<_Accessories> get copyWith =>
+  _$$_AccessoriesCopyWith<_$_Accessories> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -11,7 +11,7 @@ _$_Eyes _$$_EyesFromJson(Map<String, dynamic> json) => _$_Eyes(
     );
 
 Map<String, dynamic> _$$_EyesToJson(_$_Eyes instance) => <String, dynamic>{
-      'eyes_type': _$EyesTypeEnumMap[instance.eyesType],
+      'eyes_type': _$EyesTypeEnumMap[instance.eyesType]!,
     };
 
 const _$EyesTypeEnumMap = {

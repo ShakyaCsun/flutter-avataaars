@@ -11,7 +11,7 @@ _$_Skin _$$_SkinFromJson(Map<String, dynamic> json) => _$_Skin(
     );
 
 Map<String, dynamic> _$$_SkinToJson(_$_Skin instance) => <String, dynamic>{
-      'skin_color': _$SkinColorEnumMap[instance.skinColor],
+      'skin_color': _$SkinColorEnumMap[instance.skinColor]!,
     };
 
 const _$SkinColorEnumMap = {

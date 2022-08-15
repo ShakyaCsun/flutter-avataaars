@@ -12,29 +12,11 @@ part of 'eyes.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Eyes _$EyesFromJson(Map<String, dynamic> json) {
   return _Eyes.fromJson(json);
 }
-
-/// @nodoc
-class _$EyesTearOff {
-  const _$EyesTearOff();
-
-  _Eyes call({required EyesType eyesType}) {
-    return _Eyes(
-      eyesType: eyesType,
-    );
-  }
-
-  Eyes fromJson(Map<String, Object?> json) {
-    return Eyes.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Eyes = _$EyesTearOff();
 
 /// @nodoc
 mixin _$Eyes {
@@ -74,27 +56,27 @@ class _$EyesCopyWithImpl<$Res> implements $EyesCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EyesCopyWith<$Res> implements $EyesCopyWith<$Res> {
-  factory _$EyesCopyWith(_Eyes value, $Res Function(_Eyes) then) =
-      __$EyesCopyWithImpl<$Res>;
+abstract class _$$_EyesCopyWith<$Res> implements $EyesCopyWith<$Res> {
+  factory _$$_EyesCopyWith(_$_Eyes value, $Res Function(_$_Eyes) then) =
+      __$$_EyesCopyWithImpl<$Res>;
   @override
   $Res call({EyesType eyesType});
 }
 
 /// @nodoc
-class __$EyesCopyWithImpl<$Res> extends _$EyesCopyWithImpl<$Res>
-    implements _$EyesCopyWith<$Res> {
-  __$EyesCopyWithImpl(_Eyes _value, $Res Function(_Eyes) _then)
-      : super(_value, (v) => _then(v as _Eyes));
+class __$$_EyesCopyWithImpl<$Res> extends _$EyesCopyWithImpl<$Res>
+    implements _$$_EyesCopyWith<$Res> {
+  __$$_EyesCopyWithImpl(_$_Eyes _value, $Res Function(_$_Eyes) _then)
+      : super(_value, (v) => _then(v as _$_Eyes));
 
   @override
-  _Eyes get _value => super._value as _Eyes;
+  _$_Eyes get _value => super._value as _$_Eyes;
 
   @override
   $Res call({
     Object? eyesType = freezed,
   }) {
-    return _then(_Eyes(
+    return _then(_$_Eyes(
       eyesType: eyesType == freezed
           ? _value.eyesType
           : eyesType // ignore: cast_nullable_to_non_nullable
@@ -122,27 +104,30 @@ class _$_Eyes extends _Eyes {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Eyes &&
+            other is _$_Eyes &&
             const DeepCollectionEquality().equals(other.eyesType, eyesType));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(eyesType));
 
   @JsonKey(ignore: true)
   @override
-  _$EyesCopyWith<_Eyes> get copyWith =>
-      __$EyesCopyWithImpl<_Eyes>(this, _$identity);
+  _$$_EyesCopyWith<_$_Eyes> get copyWith =>
+      __$$_EyesCopyWithImpl<_$_Eyes>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EyesToJson(this);
+    return _$$_EyesToJson(
+      this,
+    );
   }
 }
 
 abstract class _Eyes extends Eyes {
-  const factory _Eyes({required EyesType eyesType}) = _$_Eyes;
+  const factory _Eyes({required final EyesType eyesType}) = _$_Eyes;
   const _Eyes._() : super._();
 
   factory _Eyes.fromJson(Map<String, dynamic> json) = _$_Eyes.fromJson;
@@ -151,5 +136,5 @@ abstract class _Eyes extends Eyes {
   EyesType get eyesType;
   @override
   @JsonKey(ignore: true)
-  _$EyesCopyWith<_Eyes> get copyWith => throw _privateConstructorUsedError;
+  _$$_EyesCopyWith<_$_Eyes> get copyWith => throw _privateConstructorUsedError;
 }

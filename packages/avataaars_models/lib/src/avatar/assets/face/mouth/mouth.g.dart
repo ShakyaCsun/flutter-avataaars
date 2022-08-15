@@ -11,7 +11,7 @@ _$_Mouth _$$_MouthFromJson(Map<String, dynamic> json) => _$_Mouth(
     );
 
 Map<String, dynamic> _$$_MouthToJson(_$_Mouth instance) => <String, dynamic>{
-      'mouth_type': _$MouthTypeEnumMap[instance.mouthType],
+      'mouth_type': _$MouthTypeEnumMap[instance.mouthType]!,
     };
 
 const _$MouthTypeEnumMap = {

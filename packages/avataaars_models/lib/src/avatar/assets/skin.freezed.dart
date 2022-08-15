@@ -12,29 +12,11 @@ part of 'skin.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Skin _$SkinFromJson(Map<String, dynamic> json) {
   return _Skin.fromJson(json);
 }
-
-/// @nodoc
-class _$SkinTearOff {
-  const _$SkinTearOff();
-
-  _Skin call({required SkinColor skinColor}) {
-    return _Skin(
-      skinColor: skinColor,
-    );
-  }
-
-  Skin fromJson(Map<String, Object?> json) {
-    return Skin.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Skin = _$SkinTearOff();
 
 /// @nodoc
 mixin _$Skin {
@@ -74,27 +56,27 @@ class _$SkinCopyWithImpl<$Res> implements $SkinCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SkinCopyWith<$Res> implements $SkinCopyWith<$Res> {
-  factory _$SkinCopyWith(_Skin value, $Res Function(_Skin) then) =
-      __$SkinCopyWithImpl<$Res>;
+abstract class _$$_SkinCopyWith<$Res> implements $SkinCopyWith<$Res> {
+  factory _$$_SkinCopyWith(_$_Skin value, $Res Function(_$_Skin) then) =
+      __$$_SkinCopyWithImpl<$Res>;
   @override
   $Res call({SkinColor skinColor});
 }
 
 /// @nodoc
-class __$SkinCopyWithImpl<$Res> extends _$SkinCopyWithImpl<$Res>
-    implements _$SkinCopyWith<$Res> {
-  __$SkinCopyWithImpl(_Skin _value, $Res Function(_Skin) _then)
-      : super(_value, (v) => _then(v as _Skin));
+class __$$_SkinCopyWithImpl<$Res> extends _$SkinCopyWithImpl<$Res>
+    implements _$$_SkinCopyWith<$Res> {
+  __$$_SkinCopyWithImpl(_$_Skin _value, $Res Function(_$_Skin) _then)
+      : super(_value, (v) => _then(v as _$_Skin));
 
   @override
-  _Skin get _value => super._value as _Skin;
+  _$_Skin get _value => super._value as _$_Skin;
 
   @override
   $Res call({
     Object? skinColor = freezed,
   }) {
-    return _then(_Skin(
+    return _then(_$_Skin(
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -122,27 +104,30 @@ class _$_Skin extends _Skin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Skin &&
+            other is _$_Skin &&
             const DeepCollectionEquality().equals(other.skinColor, skinColor));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(skinColor));
 
   @JsonKey(ignore: true)
   @override
-  _$SkinCopyWith<_Skin> get copyWith =>
-      __$SkinCopyWithImpl<_Skin>(this, _$identity);
+  _$$_SkinCopyWith<_$_Skin> get copyWith =>
+      __$$_SkinCopyWithImpl<_$_Skin>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SkinToJson(this);
+    return _$$_SkinToJson(
+      this,
+    );
   }
 }
 
 abstract class _Skin extends Skin {
-  const factory _Skin({required SkinColor skinColor}) = _$_Skin;
+  const factory _Skin({required final SkinColor skinColor}) = _$_Skin;
   const _Skin._() : super._();
 
   factory _Skin.fromJson(Map<String, dynamic> json) = _$_Skin.fromJson;
@@ -151,5 +136,5 @@ abstract class _Skin extends Skin {
   SkinColor get skinColor;
   @override
   @JsonKey(ignore: true)
-  _$SkinCopyWith<_Skin> get copyWith => throw _privateConstructorUsedError;
+  _$$_SkinCopyWith<_$_Skin> get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ _$_EyeBrow _$$_EyeBrowFromJson(Map<String, dynamic> json) => _$_EyeBrow(
 
 Map<String, dynamic> _$$_EyeBrowToJson(_$_EyeBrow instance) =>
     <String, dynamic>{
-      'eye_brow_type': _$EyeBrowTypeEnumMap[instance.eyeBrowType],
+      'eye_brow_type': _$EyeBrowTypeEnumMap[instance.eyeBrowType]!,
     };
 
 const _$EyeBrowTypeEnumMap = {

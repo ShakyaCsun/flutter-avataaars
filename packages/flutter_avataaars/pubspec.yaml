@@ -1,0 +1,26 @@
+name: flutter_avataaars
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: '>=2.17.1 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  avataaars_models:
+    path: ../avataaars_models
+  bloc: ^8.1.0
+  equatable: ^2.0.3
+  flutter_bloc: ^8.1.1
+  flutter_svg: ^1.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^3.0.1
+
+flutter:
+  assets:
+    - assets/

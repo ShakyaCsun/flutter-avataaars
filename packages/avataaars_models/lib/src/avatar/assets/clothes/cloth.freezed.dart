@@ -12,30 +12,11 @@ part of 'cloth.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Cloth _$ClothFromJson(Map<String, dynamic> json) {
   return _Cloth.fromJson(json);
 }
-
-/// @nodoc
-class _$ClothTearOff {
-  const _$ClothTearOff();
-
-  _Cloth call({required ClothType clothType, required ClothColor clothColor}) {
-    return _Cloth(
-      clothType: clothType,
-      clothColor: clothColor,
-    );
-  }
-
-  Cloth fromJson(Map<String, Object?> json) {
-    return Cloth.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Cloth = _$ClothTearOff();
 
 /// @nodoc
 mixin _$Cloth {
@@ -81,28 +62,28 @@ class _$ClothCopyWithImpl<$Res> implements $ClothCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ClothCopyWith<$Res> implements $ClothCopyWith<$Res> {
-  factory _$ClothCopyWith(_Cloth value, $Res Function(_Cloth) then) =
-      __$ClothCopyWithImpl<$Res>;
+abstract class _$$_ClothCopyWith<$Res> implements $ClothCopyWith<$Res> {
+  factory _$$_ClothCopyWith(_$_Cloth value, $Res Function(_$_Cloth) then) =
+      __$$_ClothCopyWithImpl<$Res>;
   @override
   $Res call({ClothType clothType, ClothColor clothColor});
 }
 
 /// @nodoc
-class __$ClothCopyWithImpl<$Res> extends _$ClothCopyWithImpl<$Res>
-    implements _$ClothCopyWith<$Res> {
-  __$ClothCopyWithImpl(_Cloth _value, $Res Function(_Cloth) _then)
-      : super(_value, (v) => _then(v as _Cloth));
+class __$$_ClothCopyWithImpl<$Res> extends _$ClothCopyWithImpl<$Res>
+    implements _$$_ClothCopyWith<$Res> {
+  __$$_ClothCopyWithImpl(_$_Cloth _value, $Res Function(_$_Cloth) _then)
+      : super(_value, (v) => _then(v as _$_Cloth));
 
   @override
-  _Cloth get _value => super._value as _Cloth;
+  _$_Cloth get _value => super._value as _$_Cloth;
 
   @override
   $Res call({
     Object? clothType = freezed,
     Object? clothColor = freezed,
   }) {
-    return _then(_Cloth(
+    return _then(_$_Cloth(
       clothType: clothType == freezed
           ? _value.clothType
           : clothType // ignore: cast_nullable_to_non_nullable
@@ -138,12 +119,13 @@ class _$_Cloth extends _Cloth {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Cloth &&
+            other is _$_Cloth &&
             const DeepCollectionEquality().equals(other.clothType, clothType) &&
             const DeepCollectionEquality()
                 .equals(other.clothColor, clothColor));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -152,19 +134,21 @@ class _$_Cloth extends _Cloth {
 
   @JsonKey(ignore: true)
   @override
-  _$ClothCopyWith<_Cloth> get copyWith =>
-      __$ClothCopyWithImpl<_Cloth>(this, _$identity);
+  _$$_ClothCopyWith<_$_Cloth> get copyWith =>
+      __$$_ClothCopyWithImpl<_$_Cloth>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClothToJson(this);
+    return _$$_ClothToJson(
+      this,
+    );
   }
 }
 
 abstract class _Cloth extends Cloth {
   const factory _Cloth(
-      {required ClothType clothType,
-      required ClothColor clothColor}) = _$_Cloth;
+      {required final ClothType clothType,
+      required final ClothColor clothColor}) = _$_Cloth;
   const _Cloth._() : super._();
 
   factory _Cloth.fromJson(Map<String, dynamic> json) = _$_Cloth.fromJson;
@@ -175,5 +159,6 @@ abstract class _Cloth extends Cloth {
   ClothColor get clothColor;
   @override
   @JsonKey(ignore: true)
-  _$ClothCopyWith<_Cloth> get copyWith => throw _privateConstructorUsedError;
+  _$$_ClothCopyWith<_$_Cloth> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -12,32 +12,11 @@ part of 'facial_hair.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 FacialHair _$FacialHairFromJson(Map<String, dynamic> json) {
   return _FacialHair.fromJson(json);
 }
-
-/// @nodoc
-class _$FacialHairTearOff {
-  const _$FacialHairTearOff();
-
-  _FacialHair call(
-      {required FacialHairType facialHairType,
-      required FacialHairColor facialHairColor}) {
-    return _FacialHair(
-      facialHairType: facialHairType,
-      facialHairColor: facialHairColor,
-    );
-  }
-
-  FacialHair fromJson(Map<String, Object?> json) {
-    return FacialHair.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $FacialHair = _$FacialHairTearOff();
 
 /// @nodoc
 mixin _$FacialHair {
@@ -85,30 +64,31 @@ class _$FacialHairCopyWithImpl<$Res> implements $FacialHairCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FacialHairCopyWith<$Res> implements $FacialHairCopyWith<$Res> {
-  factory _$FacialHairCopyWith(
-          _FacialHair value, $Res Function(_FacialHair) then) =
-      __$FacialHairCopyWithImpl<$Res>;
+abstract class _$$_FacialHairCopyWith<$Res>
+    implements $FacialHairCopyWith<$Res> {
+  factory _$$_FacialHairCopyWith(
+          _$_FacialHair value, $Res Function(_$_FacialHair) then) =
+      __$$_FacialHairCopyWithImpl<$Res>;
   @override
   $Res call({FacialHairType facialHairType, FacialHairColor facialHairColor});
 }
 
 /// @nodoc
-class __$FacialHairCopyWithImpl<$Res> extends _$FacialHairCopyWithImpl<$Res>
-    implements _$FacialHairCopyWith<$Res> {
-  __$FacialHairCopyWithImpl(
-      _FacialHair _value, $Res Function(_FacialHair) _then)
-      : super(_value, (v) => _then(v as _FacialHair));
+class __$$_FacialHairCopyWithImpl<$Res> extends _$FacialHairCopyWithImpl<$Res>
+    implements _$$_FacialHairCopyWith<$Res> {
+  __$$_FacialHairCopyWithImpl(
+      _$_FacialHair _value, $Res Function(_$_FacialHair) _then)
+      : super(_value, (v) => _then(v as _$_FacialHair));
 
   @override
-  _FacialHair get _value => super._value as _FacialHair;
+  _$_FacialHair get _value => super._value as _$_FacialHair;
 
   @override
   $Res call({
     Object? facialHairType = freezed,
     Object? facialHairColor = freezed,
   }) {
-    return _then(_FacialHair(
+    return _then(_$_FacialHair(
       facialHairType: facialHairType == freezed
           ? _value.facialHairType
           : facialHairType // ignore: cast_nullable_to_non_nullable
@@ -145,13 +125,14 @@ class _$_FacialHair extends _FacialHair {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FacialHair &&
+            other is _$_FacialHair &&
             const DeepCollectionEquality()
                 .equals(other.facialHairType, facialHairType) &&
             const DeepCollectionEquality()
                 .equals(other.facialHairColor, facialHairColor));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -160,19 +141,21 @@ class _$_FacialHair extends _FacialHair {
 
   @JsonKey(ignore: true)
   @override
-  _$FacialHairCopyWith<_FacialHair> get copyWith =>
-      __$FacialHairCopyWithImpl<_FacialHair>(this, _$identity);
+  _$$_FacialHairCopyWith<_$_FacialHair> get copyWith =>
+      __$$_FacialHairCopyWithImpl<_$_FacialHair>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FacialHairToJson(this);
+    return _$$_FacialHairToJson(
+      this,
+    );
   }
 }
 
 abstract class _FacialHair extends FacialHair {
   const factory _FacialHair(
-      {required FacialHairType facialHairType,
-      required FacialHairColor facialHairColor}) = _$_FacialHair;
+      {required final FacialHairType facialHairType,
+      required final FacialHairColor facialHairColor}) = _$_FacialHair;
   const _FacialHair._() : super._();
 
   factory _FacialHair.fromJson(Map<String, dynamic> json) =
@@ -184,6 +167,6 @@ abstract class _FacialHair extends FacialHair {
   FacialHairColor get facialHairColor;
   @override
   @JsonKey(ignore: true)
-  _$FacialHairCopyWith<_FacialHair> get copyWith =>
+  _$$_FacialHairCopyWith<_$_FacialHair> get copyWith =>
       throw _privateConstructorUsedError;
 }

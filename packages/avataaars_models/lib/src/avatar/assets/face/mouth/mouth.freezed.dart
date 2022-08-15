@@ -12,29 +12,11 @@ part of 'mouth.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Mouth _$MouthFromJson(Map<String, dynamic> json) {
   return _Mouth.fromJson(json);
 }
-
-/// @nodoc
-class _$MouthTearOff {
-  const _$MouthTearOff();
-
-  _Mouth call({required MouthType mouthType}) {
-    return _Mouth(
-      mouthType: mouthType,
-    );
-  }
-
-  Mouth fromJson(Map<String, Object?> json) {
-    return Mouth.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Mouth = _$MouthTearOff();
 
 /// @nodoc
 mixin _$Mouth {
@@ -74,27 +56,27 @@ class _$MouthCopyWithImpl<$Res> implements $MouthCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$MouthCopyWith<$Res> implements $MouthCopyWith<$Res> {
-  factory _$MouthCopyWith(_Mouth value, $Res Function(_Mouth) then) =
-      __$MouthCopyWithImpl<$Res>;
+abstract class _$$_MouthCopyWith<$Res> implements $MouthCopyWith<$Res> {
+  factory _$$_MouthCopyWith(_$_Mouth value, $Res Function(_$_Mouth) then) =
+      __$$_MouthCopyWithImpl<$Res>;
   @override
   $Res call({MouthType mouthType});
 }
 
 /// @nodoc
-class __$MouthCopyWithImpl<$Res> extends _$MouthCopyWithImpl<$Res>
-    implements _$MouthCopyWith<$Res> {
-  __$MouthCopyWithImpl(_Mouth _value, $Res Function(_Mouth) _then)
-      : super(_value, (v) => _then(v as _Mouth));
+class __$$_MouthCopyWithImpl<$Res> extends _$MouthCopyWithImpl<$Res>
+    implements _$$_MouthCopyWith<$Res> {
+  __$$_MouthCopyWithImpl(_$_Mouth _value, $Res Function(_$_Mouth) _then)
+      : super(_value, (v) => _then(v as _$_Mouth));
 
   @override
-  _Mouth get _value => super._value as _Mouth;
+  _$_Mouth get _value => super._value as _$_Mouth;
 
   @override
   $Res call({
     Object? mouthType = freezed,
   }) {
-    return _then(_Mouth(
+    return _then(_$_Mouth(
       mouthType: mouthType == freezed
           ? _value.mouthType
           : mouthType // ignore: cast_nullable_to_non_nullable
@@ -123,27 +105,30 @@ class _$_Mouth extends _Mouth {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Mouth &&
+            other is _$_Mouth &&
             const DeepCollectionEquality().equals(other.mouthType, mouthType));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(mouthType));
 
   @JsonKey(ignore: true)
   @override
-  _$MouthCopyWith<_Mouth> get copyWith =>
-      __$MouthCopyWithImpl<_Mouth>(this, _$identity);
+  _$$_MouthCopyWith<_$_Mouth> get copyWith =>
+      __$$_MouthCopyWithImpl<_$_Mouth>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MouthToJson(this);
+    return _$$_MouthToJson(
+      this,
+    );
   }
 }
 
 abstract class _Mouth extends Mouth {
-  const factory _Mouth({required MouthType mouthType}) = _$_Mouth;
+  const factory _Mouth({required final MouthType mouthType}) = _$_Mouth;
   const _Mouth._() : super._();
 
   factory _Mouth.fromJson(Map<String, dynamic> json) = _$_Mouth.fromJson;
@@ -152,5 +137,6 @@ abstract class _Mouth extends Mouth {
   MouthType get mouthType;
   @override
   @JsonKey(ignore: true)
-  _$MouthCopyWith<_Mouth> get copyWith => throw _privateConstructorUsedError;
+  _$$_MouthCopyWith<_$_Mouth> get copyWith =>
+      throw _privateConstructorUsedError;
 }

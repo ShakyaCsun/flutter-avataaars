@@ -12,8 +12,8 @@ _$_Cloth _$$_ClothFromJson(Map<String, dynamic> json) => _$_Cloth(
     );
 
 Map<String, dynamic> _$$_ClothToJson(_$_Cloth instance) => <String, dynamic>{
-      'cloth_type': _$ClothTypeEnumMap[instance.clothType],
-      'cloth_color': _$ClothColorEnumMap[instance.clothColor],
+      'cloth_type': _$ClothTypeEnumMap[instance.clothType]!,
+      'cloth_color': _$ClothColorEnumMap[instance.clothColor]!,
     };
 
 const _$ClothTypeEnumMap = {

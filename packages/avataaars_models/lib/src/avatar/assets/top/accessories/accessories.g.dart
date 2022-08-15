@@ -14,7 +14,7 @@ _$_Accessories _$$_AccessoriesFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_AccessoriesToJson(_$_Accessories instance) =>
     <String, dynamic>{
-      'accessory_type': _$AccessoryTypeEnumMap[instance.accessoryType],
+      'accessory_type': _$AccessoryTypeEnumMap[instance.accessoryType]!,
     };
 
 const _$AccessoryTypeEnumMap = {

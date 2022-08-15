@@ -16,8 +16,8 @@ _$_FacialHair _$$_FacialHairFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_FacialHairToJson(_$_FacialHair instance) =>
     <String, dynamic>{
-      'facial_hair_type': _$FacialHairTypeEnumMap[instance.facialHairType],
-      'facial_hair_color': _$FacialHairColorEnumMap[instance.facialHairColor],
+      'facial_hair_type': _$FacialHairTypeEnumMap[instance.facialHairType]!,
+      'facial_hair_color': _$FacialHairColorEnumMap[instance.facialHairColor]!,
     };
 
 const _$FacialHairTypeEnumMap = {
